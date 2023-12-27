@@ -253,4 +253,6 @@ class ImageRepository {
             'https://place-hold.it/400x300/fff/005/000?text=Lotus Root&fontsize=60',
         kind: 'Lotus Root'),
   ];
+
+  List<ImageModel> getImages() => images;
 }
