@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_image_grid_app/model/image_model.dart';
+import 'package:my_flutter_image_grid_app/23_12_27/model/image_model.dart';
 
 class GridItem extends StatelessWidget {
   final ImageModel image;

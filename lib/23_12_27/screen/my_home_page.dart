@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/logger/simple_logger.dart';
-import 'package:my_flutter_image_grid_app/model/image_model.dart';
-import 'package:my_flutter_image_grid_app/repository/image_repository.dart';
+import 'package:my_flutter_image_grid_app/23_12_27/model/image_model.dart';
+import 'package:my_flutter_image_grid_app/23_12_27/repository/image_repository.dart';
 
 import '../item/grid_item.dart';
 
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.8,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
