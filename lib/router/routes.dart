@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart';
+import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
 import 'package:my_flutter_image_grid_app/route_page.dart';
 
 final router = GoRouter(
@@ -28,6 +29,12 @@ final router = GoRouter(
         return const Main240102Page();
       },
     ),
+    GoRoute(
+      path: '/240102_provider',
+      builder: (context, state) {
+        return const MainProviderPage();
+      },
+    ),
   ],
 );
 
@@ -35,6 +42,7 @@ class Routes {
   final List<RouteModel> routeList = [
     RouteModel(title: '231227', developTime: 'none'),
     RouteModel(title: '240102', developTime: '1h40m54s8'),
+    RouteModel(title: '240102_provider', developTime: 'provider_testing'),
     // RouteModel(title: '240103', developTime: 'none'),
     // RouteModel(title: '240104', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
