@@ -44,3 +44,6 @@ app.*.map.json
 
 # assets
 /assets/*
+
+# CONSTANT
+/lib/constant/constant.dart
