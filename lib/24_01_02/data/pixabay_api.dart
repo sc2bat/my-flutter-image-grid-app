@@ -6,13 +6,13 @@ import 'package:my_flutter_image_grid_app/constant/constant.dart';
 import 'package:my_flutter_image_grid_app/logger/simple_logger.dart';
 
 class PixabayApi {
-  Future<Pixabay> getImageResult(String query) async {
-    final query = {
-      "key": PIXABAY_API_KEY,
-      "q": "",
-      "image_type": "photo",
-      "pretty": "true",
-    };
+  Future<Pixabay> getImageResult(Map<String, dynamic> query) async {
+    // final query = {
+    //   "key": PIXABAY_API_KEY,
+    //   "q": "",
+    //   "image_type": "photo",
+    //   "pretty": "true",
+    // };
 
     final response =
         await HttpConnection(PIXABAY_BASE_URL, query).apiConnection();

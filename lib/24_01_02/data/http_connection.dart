@@ -11,11 +11,11 @@ class HttpConnection {
 
   Future<http.Response> apiConnection() async {
     final response =
-        await http.get(Uri.parse('${queryProcess(baseUrl, query)}'));
+        await http.get(Uri.parse('${_queryProcess(baseUrl, query)}'));
     return response;
   }
 
-  queryProcess(String baseUrl, Map<String, dynamic> query) {
+  _queryProcess(String baseUrl, Map<String, dynamic> query) {
     String resultUrl = '';
     List<String> queryParameters = [];
     query.forEach((key, value) {
