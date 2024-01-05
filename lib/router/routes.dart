@@ -2,9 +2,14 @@
 import 'package:go_router/go_router.dart';
 
 import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
+<<<<<<< HEAD
 import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
 import 'package:my_flutter_image_grid_app/route_page.dart';
+=======
+import 'package:my_flutter_image_grid_app/23_12_28/screen/searching_screen.dart';
+import 'package:my_flutter_image_grid_app/router/route_page.dart';
+>>>>>>> origin/test-001
 
 final router = GoRouter(
   initialLocation: '/',
@@ -26,6 +31,7 @@ final router = GoRouter(
     GoRoute(
       path: '/240102',
       builder: (context, state) {
+<<<<<<< HEAD
         return const Main240102Page();
       },
     ),
@@ -33,6 +39,9 @@ final router = GoRouter(
       path: '/240102_provider',
       builder: (context, state) {
         return const MainProviderPage();
+=======
+        return const SearchingScreen();
+>>>>>>> origin/test-001
       },
     ),
   ],
