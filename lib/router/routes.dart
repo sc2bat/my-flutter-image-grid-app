@@ -5,6 +5,11 @@ import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
 <<<<<<< HEAD
 import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/main_change_notifier_provider_page.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
 import 'package:my_flutter_image_grid_app/route_page.dart';
 =======
 import 'package:my_flutter_image_grid_app/23_12_28/screen/searching_screen.dart';
@@ -44,6 +49,14 @@ final router = GoRouter(
 >>>>>>> origin/test-001
       },
     ),
+    GoRoute(
+      path: '/240105_ChangeNotifierProvider',
+      builder: (context, state) {
+        return PhotoInheritedWidget(
+            homeViewModel: HomeViewModel(api: PhotoApi()),
+            child: const MainChangeNotifierProviderPage());
+      },
+    ),
   ],
 );
 
@@ -52,7 +65,7 @@ class Routes {
     RouteModel(title: '231227', developTime: 'none'),
     RouteModel(title: '240102', developTime: '1h40m54s8'),
     RouteModel(title: '240102_provider', developTime: 'provider_testing'),
-    // RouteModel(title: '240103', developTime: 'none'),
+    RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
     // RouteModel(title: '240104', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
