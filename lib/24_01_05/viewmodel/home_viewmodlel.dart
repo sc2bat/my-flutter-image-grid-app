@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api_repository.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 
 class HomeViewModel {
-  final PhotoApi api;
+  // final PhotoApi api;
+  final PHotoApiRepository api;
 
   HomeViewModel({
     required this.api,

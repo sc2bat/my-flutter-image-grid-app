@@ -37,6 +37,6 @@ class PhotoInheritedWidget extends InheritedWidget {
   bool updateShouldNotify(covariant PhotoInheritedWidget oldWidget) {
     return true;
 
-    throw UnimplementedError();
+    // throw UnimplementedError();
   }
 }
