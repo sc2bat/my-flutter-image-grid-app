@@ -1,19 +1,23 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
-import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 
 class PhotoInheritedWidget extends InheritedWidget {
-  final PhotoApi api;
+  // final PhotoApi api;
 
-  final _photoStreamController = StreamController<List<Hit>>()..add([]);
-  Stream<List<Hit>> get photoStream => _photoStreamController.stream;
+  // final _photoStreamController = StreamController<List<Hit>>()..add([]);
+  // Stream<List<Hit>> get photoStream => _photoStreamController.stream;
 
-  PhotoInheritedWidget({
+  final HomeViewModel homeViewModel;
+
+  const PhotoInheritedWidget({
     super.key,
     required super.child,
-    required this.api,
+    // required this.api,
+    required this.homeViewModel,
   });
 
   static PhotoInheritedWidget of(BuildContext context) {
@@ -24,14 +28,14 @@ class PhotoInheritedWidget extends InheritedWidget {
     return result!;
   }
 
-  Future<void> presseSearchButton(String query) async {
-    final result = await api.fetch(query);
-    _photoStreamController.add(result);
-  }
+  // Future<void> fetch(String query) async {
+  //   final result = await api.fetch(query);
+  //   _photoStreamController.add(result);
+  // }
 
   @override
   bool updateShouldNotify(covariant PhotoInheritedWidget oldWidget) {
-    return oldWidget.api != api;
+    return true;
 
     throw UnimplementedError();
   }

@@ -6,8 +6,9 @@ import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart
 import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/main_change_notifier_provider_page.dart';
-import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
 import 'package:my_flutter_image_grid_app/route_page.dart';
 
 final router = GoRouter(
@@ -43,7 +44,8 @@ final router = GoRouter(
       path: '/240105_ChangeNotifierProvider',
       builder: (context, state) {
         return PhotoInheritedWidget(
-            api: PhotoApi(), child: const MainChangeNotifierProviderPage());
+            homeViewModel: HomeViewModel(api: PhotoApi()),
+            child: const MainChangeNotifierProviderPage());
       },
     ),
   ],

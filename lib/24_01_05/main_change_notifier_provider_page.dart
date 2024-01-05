@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/image_grid_view_widget.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
@@ -20,7 +20,7 @@ class _MainChangeNotifierProviderPageState
   // 검색창 문자열 컨트롤러
   final _searchTextController = TextEditingController();
 
-  final bool _isLoading = true;
+  // final bool _isLoading = true;
 
   // void presseSearchButton(PhotoInheritedWidget photoInheritedWidget) async {
   //   _isLoading = true;
@@ -42,7 +42,8 @@ class _MainChangeNotifierProviderPageState
 
   @override
   Widget build(BuildContext context) {
-    final photoInheritedWidget = PhotoInheritedWidget.of(context);
+    // final photoInheritedWidget = PhotoInheritedWidget.of(context);
+    final viewModel = PhotoInheritedWidget.of(context).homeViewModel;
 
     return Scaffold(
       appBar: AppBar(
@@ -83,8 +84,7 @@ class _MainChangeNotifierProviderPageState
                     onTap: () {
                       logger.info('qwerasdf press search button ');
                       // presseSearchButton(photoInheritedWidget);
-                      photoInheritedWidget
-                          .presseSearchButton(_searchTextController.text);
+                      viewModel.fetch(_searchTextController.text);
                     },
                     child: const Icon(
                       Icons.search,
@@ -97,9 +97,13 @@ class _MainChangeNotifierProviderPageState
               height: 16.0,
             ),
             StreamBuilder<List<Hit>>(
-              stream: photoInheritedWidget.photoStream,
+              stream: viewModel.photoStream,
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
+                if (!snapshot.hasData) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
                   final photos = snapshot.data!;
                   return Expanded(
                     child: GridView.builder(
@@ -115,10 +119,6 @@ class _MainChangeNotifierProviderPageState
                         return PhotoWidget(hit: photos[index]);
                       },
                     ),
-                  );
-                } else {
-                  return const Center(
-                    child: CircularProgressIndicator(),
                   );
                 }
               },
