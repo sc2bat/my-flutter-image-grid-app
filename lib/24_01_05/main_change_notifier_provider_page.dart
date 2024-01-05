@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/image_grid_view_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
 import 'package:my_flutter_image_grid_app/logger/simple_logger.dart';
 
 class MainChangeNotifierProviderPage extends StatefulWidget {
@@ -15,18 +16,18 @@ class MainChangeNotifierProviderPage extends StatefulWidget {
 class _MainChangeNotifierProviderPageState
     extends State<MainChangeNotifierProviderPage> {
   // photo 를 담을 list
-  List<Hit> photos = [];
+  // List<Hit> photos = [];
   // 검색창 문자열 컨트롤러
   final _searchTextController = TextEditingController();
 
-  bool _isLoading = true;
+  final bool _isLoading = true;
 
-  void presseSearchButton() async {
-    _isLoading = true;
-    photos = await PhotoApi().fetch(_searchTextController.text);
-    _isLoading = false;
-    setState(() {});
-  }
+  // void presseSearchButton(PhotoInheritedWidget photoInheritedWidget) async {
+  //   _isLoading = true;
+  //   photos = await photoInheritedWidget.api.fetch(_searchTextController.text);
+  //   _isLoading = false;
+  //   setState(() {});
+  // }
 
   @override
   void initState() {
@@ -41,6 +42,8 @@ class _MainChangeNotifierProviderPageState
 
   @override
   Widget build(BuildContext context) {
+    final photoInheritedWidget = PhotoInheritedWidget.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -79,7 +82,9 @@ class _MainChangeNotifierProviderPageState
                   child: GestureDetector(
                     onTap: () {
                       logger.info('qwerasdf press search button ');
-                      presseSearchButton();
+                      // presseSearchButton(photoInheritedWidget);
+                      photoInheritedWidget
+                          .presseSearchButton(_searchTextController.text);
                     },
                     child: const Icon(
                       Icons.search,
@@ -91,14 +96,15 @@ class _MainChangeNotifierProviderPageState
             const SizedBox(
               height: 16.0,
             ),
-            _isLoading
-                ? const Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Expanded(
+            StreamBuilder<List<Hit>>(
+              stream: photoInheritedWidget.photoStream,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final photos = snapshot.data!;
+                  return Expanded(
                     child: GridView.builder(
                       shrinkWrap: true,
-                      itemCount: 20,
+                      itemCount: photos.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
@@ -109,7 +115,14 @@ class _MainChangeNotifierProviderPageState
                         return PhotoWidget(hit: photos[index]);
                       },
                     ),
-                  ),
+                  );
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
           ],
         ),
       ),
