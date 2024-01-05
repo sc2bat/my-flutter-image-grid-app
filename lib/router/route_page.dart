@@ -27,7 +27,7 @@ class RoutePage extends StatelessWidget {
                   subtitle: Text('time => ${routeList[index].developTime}'),
                   leading: const Icon(Icons.star), // 좌측에 아이콘 표시
                   onTap: () {
-                    context.push('/${routeList[index]}');
+                    context.push('/${routeList[index].title}');
                   },
                 );
               },

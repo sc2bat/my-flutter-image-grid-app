@@ -2,7 +2,8 @@
 import 'package:go_router/go_router.dart';
 
 import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
-import 'package:my_flutter_image_grid_app/route_page.dart';
+import 'package:my_flutter_image_grid_app/23_12_28/screen/searching_screen.dart';
+import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
   initialLocation: '/',
@@ -24,9 +25,7 @@ final router = GoRouter(
     GoRoute(
       path: '/231228',
       builder: (context, state) {
-        return const MyHomePage(
-          title: '231228 image grid',
-        );
+        return const SearchingScreen();
       },
     ),
   ],
