@@ -9,6 +9,7 @@ import 'package:my_flutter_image_grid_app/24_01_05/main_change_notifier_provider
 // import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
 import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
+import 'package:my_flutter_image_grid_app/24_01_06/recap_main_page.dart';
 import 'package:my_flutter_image_grid_app/route_page.dart';
 
 final router = GoRouter(
@@ -48,6 +49,12 @@ final router = GoRouter(
             child: const MainChangeNotifierProviderPage());
       },
     ),
+    GoRoute(
+      path: '/240105_ChangeNotifierProvider',
+      builder: (context, state) {
+        return const RecapChangeNotifierProviderPage();
+      },
+    ),
   ],
 );
 
@@ -57,7 +64,7 @@ class Routes {
     RouteModel(title: '240102', developTime: '1h40m54s8'),
     RouteModel(title: '240102_provider', developTime: 'provider_testing'),
     RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
-    // RouteModel(title: '240104', developTime: 'none'),
+    RouteModel(title: '240106_recap', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
     // RouteModel(title: '240107', developTime: 'none'),
