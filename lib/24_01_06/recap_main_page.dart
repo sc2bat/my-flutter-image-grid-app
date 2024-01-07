@@ -15,8 +15,7 @@ class RecapChangeNotifierProviderPage extends StatelessWidget {
               scrolledUnderElevation: 0.0,
               titleSpacing: 0.0,
               backgroundColor: Colors.transparent,
-              floating:
-                  true, // We can also uncomment this line and set `pinned` to true to see a pinned search bar.
+              floating: true,
               title: SearchAnchor.bar(
                 suggestionsBuilder:
                     (BuildContext context, SearchController controller) {
@@ -32,8 +31,6 @@ class RecapChangeNotifierProviderPage extends StatelessWidget {
                 },
               ),
             ),
-            // The listed items below are just for filling the screen
-            // so we can see the scrolling effect.
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.all(20),

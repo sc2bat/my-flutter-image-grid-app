@@ -50,7 +50,7 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/240105_ChangeNotifierProvider',
+      path: '/240106_recap_provider',
       builder: (context, state) {
         return const RecapChangeNotifierProviderPage();
       },
@@ -64,7 +64,7 @@ class Routes {
     RouteModel(title: '240102', developTime: '1h40m54s8'),
     RouteModel(title: '240102_provider', developTime: 'provider_testing'),
     RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
-    RouteModel(title: '240106_recap', developTime: 'none'),
+    RouteModel(title: '240106_recap_provider', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
     // RouteModel(title: '240107', developTime: 'none'),
