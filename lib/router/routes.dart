@@ -2,9 +2,15 @@
 import 'package:go_router/go_router.dart';
 
 import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
-import 'package:my_flutter_image_grid_app/23_12_28/screen/searching_screen.dart';
+import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart';
+import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/data/photo_api.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/main_change_notifier_provider_page.dart';
+// import 'package:my_flutter_image_grid_app/24_01_05/model/photo.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
+import 'package:my_flutter_image_grid_app/24_01_06/recap_main_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_18/main_roulette_screen.dart';
-
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -27,7 +33,13 @@ final router = GoRouter(
     GoRoute(
       path: '/240102',
       builder: (context, state) {
-        return const SearchingScreen();
+        return const Main240102Page();
+      },
+    ),
+    GoRoute(
+      path: '/240102_provider',
+      builder: (context, state) {
+        return const MainProviderPage();
       },
     ),
     // GoRoute(
@@ -42,6 +54,12 @@ final router = GoRouter(
       path: '/240118_MainRouletteScreen',
       builder: (context, state) {
         return const MainRouletteScreen();
+      },
+    ),
+    GoRoute(
+      path: '/240106_recap_provider',
+      builder: (context, state) {
+        return const RecapChangeNotifierProviderPage();
       },
     ),
   ],
