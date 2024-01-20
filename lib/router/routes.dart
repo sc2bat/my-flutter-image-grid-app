@@ -11,6 +11,7 @@ import 'package:my_flutter_image_grid_app/24_01_05/ui/widget/photo_inherited_wid
 import 'package:my_flutter_image_grid_app/24_01_05/viewmodel/home_viewmodlel.dart';
 import 'package:my_flutter_image_grid_app/24_01_06/recap_main_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_18/main_roulette_screen.dart';
+import 'package:my_flutter_image_grid_app/24_01_20_firebase/main_firebase.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -62,6 +63,12 @@ final router = GoRouter(
         return const RecapChangeNotifierProviderPage();
       },
     ),
+    GoRoute(
+      path: '/24_01_20_firebase',
+      builder: (context, state) {
+        return const FirebaseTestingPage();
+      },
+    ),
   ],
 );
 
@@ -72,7 +79,7 @@ class Routes {
     RouteModel(title: '240102_provider', developTime: 'provider_testing'),
     RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
     RouteModel(title: '240118_MainRouletteScreen', developTime: 'none'),
-    // RouteModel(title: '240104', developTime: 'none'),
+    RouteModel(title: '24_01_20_firebase', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
     // RouteModel(title: '240107', developTime: 'none'),
