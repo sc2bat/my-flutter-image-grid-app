@@ -47,3 +47,43 @@ app.*.map.json
 
 # CONSTANT
 /lib/constant/constant.dart
+
+# .gitignore for Flutter with Firebase project
+
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea/
+.vscode/
+*.iml
+*.log
+/build/
+/captures/
+
+# Firebase specific
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+firebase-debug.log
+.firebaserc.json
+.firebaserc
+.firebase/hosting.YOUR_PROJECT_ID.json  # Replace YOUR_PROJECT_ID with your actual project ID\
+/lib/firebase_options.dart
+/ios/firebase_app_id_file.json
+/macos/Runner/GoogleService-Info.plist
+/macos/firebase_app_id_file.json
+
+# Firebase Cloud Functions
+functions/node_modules/
+
+# Android build
+android/app/build/
+
+# iOS build
+ios/Flutter/App.framework/
+ios/Flutter/Flutter.xcconfig
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/flutter_export_environment_ios.sh
+ios/Pods/
+ios/Podfile.lock
