@@ -57,8 +57,8 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('랜덤 뽑기 결과'),
-          content: Text('여기에 뽑기 결과를 표시합니다.'),
+          title: Text('result'),
+          content: Text('pikachu~~'),
           actions: [
             TextButton(
               onPressed: () {
@@ -76,7 +76,7 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('랜덤 뽑기'),
+        title: Text('뽑기'),
       ),
       body: Center(
         child: Column(
@@ -85,7 +85,7 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
             RotationTransition(
               turns: _animation,
               child: Image.asset(
-                'assets/roulette.png', // 룰렛 이미지 파일 경로로 변경
+                'assets/images/pokeball.png',
                 width: 200,
                 height: 200,
               ),
@@ -93,11 +93,11 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _startSpinning,
-              child: Text('랜덤 뽑기 시작'),
+              child: Text('시작'),
             ),
             ElevatedButton(
               onPressed: _stopSpinning,
-              child: Text('랜덤 뽑기 종료'),
+              child: Text('종료'),
             ),
           ],
         ),
