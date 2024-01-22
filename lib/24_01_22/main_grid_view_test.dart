@@ -1,75 +1,56 @@
 import 'package:flutter/material.dart';
 
 class MyGridViewTest extends StatefulWidget {
-  const MyGridViewTest({super.key});
+  const MyGridViewTest({Key? key}) : super(key: key);
 
   @override
   _MyGridViewTestState createState() => _MyGridViewTestState();
 }
 
 class _MyGridViewTestState extends State<MyGridViewTest> {
-  List<String> gridItems = List.generate(9, (index) => 'Item ${index + 1}');
-  List<String> listItems = [];
-
-  double currentScale = 1.0;
+  int crossAxisCount = 2; // Initial cross-axis count for GridView
+  double scale = 1.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Multi-Touch Grid and List View'),
+        title: const Text('Pinch Zoom Grid View'),
       ),
       body: GestureDetector(
         onScaleUpdate: (details) {
           setState(() {
-            currentScale = details.scale;
+            scale = details.scale;
           });
         },
         onScaleEnd: (details) {
-          if (currentScale > 1.0) {
-            // If the user scales up (zoom gesture), switch to GridView
-            setState(() {
-              gridItems.addAll(listItems);
-              listItems.clear();
-            });
-          } else if (currentScale < 1.0) {
-            // If the user scales down (pinch gesture), switch to ListView
-            setState(() {
-              listItems.addAll(gridItems);
-              gridItems.clear();
-            });
+          // Adjust cross-axis count based on pinch scale
+          if (scale > 1.0 && crossAxisCount > 2) {
+            crossAxisCount -= 1;
+          } else if (scale < 1.0 && crossAxisCount < 5) {
+            crossAxisCount += 1;
           }
-
-          currentScale = 1.0; // Reset the scale for the next interaction
+          scale = 1.0; // Reset scale for the next interaction
         },
-        child: gridItems.isNotEmpty
-            ? GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+          ),
+          itemCount: 20, // Adjust as needed
+          itemBuilder: (context, index) {
+            return GridTile(
+              child: Container(
+                color: Colors.blue,
+                child: Center(
+                  child: Text(
+                    'Item ${index + 1}',
+                    style: const TextStyle(color: Colors.white),
+                  ),
                 ),
-                itemCount: gridItems.length,
-                itemBuilder: (context, index) {
-                  return GridTile(
-                    child: Container(
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(
-                          gridItems[index],
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              )
-            : ListView.builder(
-                itemCount: listItems.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(listItems[index]),
-                  );
-                },
               ),
+            );
+          },
+        ),
       ),
     );
   }
