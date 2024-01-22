@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "my-testing-app",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "asia-east1"
+      }
+    }
+  ]
+}
