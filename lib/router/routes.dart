@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:go_router/go_router.dart';
-
 import 'package:my_flutter_image_grid_app/23_12_27/screen/my_home_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_02/ui/page/main_240102_page.dart';
 import 'package:my_flutter_image_grid_app/24_01_02_provider/page/main_provider_page.dart';
@@ -15,6 +14,7 @@ import 'package:my_flutter_image_grid_app/24_01_18/main_roulette_screen.dart';
 import 'package:my_flutter_image_grid_app/24_01_22/main_grid_view_test.dart';
 // import 'package:my_flutter_image_grid_app/24_01_20_firebase/main_firebase.dart';
 import 'package:my_flutter_image_grid_app/24_01_22/main_grid_view_test_backup.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/main_animate_grid_test.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -84,6 +84,12 @@ final router = GoRouter(
         return const MyGridViewTest();
       },
     ),
+    GoRoute(
+      path: '/24_01_25_gridviewtest',
+      builder: (context, state) {
+        return const ZoomableGridView();
+      },
+    ),
   ],
 );
 
@@ -96,6 +102,7 @@ class Routes {
     RouteModel(title: '240118_MainRouletteScreen', developTime: 'none'),
     RouteModel(title: '24_01_22_gridviewtest_backup', developTime: 'none'),
     RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
+    RouteModel(title: '24_01_25_gridviewtest', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
     // RouteModel(title: '240107', developTime: 'none'),

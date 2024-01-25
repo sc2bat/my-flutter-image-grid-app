@@ -1,6 +1,3 @@
-import 'dart:async';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class MainRouletteScreen extends StatefulWidget {
@@ -21,7 +18,7 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
     super.initState();
     _controller = AnimationController(
       vsync: this, // this가 TickerProvider를 구현하도록 함
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     )..addListener(() {
         setState(() {});
       });
@@ -37,8 +34,6 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
       _controller.reset();
       _controller.forward();
       _isSpinning = true;
-
-      // 룰렛이 도는 동안의 로직을 추가할 수 있습니다.
     }
   }
 
@@ -46,8 +41,6 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
     if (_isSpinning) {
       _controller.stop();
       _isSpinning = false;
-
-      // 뽑기가 종료된 후의 로직을 추가할 수 있습니다.
       _showResultPopup();
     }
   }
@@ -57,14 +50,14 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('result'),
-          content: Text('pikachu~~'),
+          title: const Text('result'),
+          content: const Text('pikachu~~'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('확인'),
+              child: const Text('확인'),
             ),
           ],
         );
@@ -76,7 +69,7 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('뽑기'),
+        title: const Text('뽑기'),
       ),
       body: Center(
         child: Column(
@@ -90,14 +83,14 @@ class _MainRouletteScreenState extends State<MainRouletteScreen>
                 height: 200,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _startSpinning,
-              child: Text('시작'),
+              child: const Text('시작'),
             ),
             ElevatedButton(
               onPressed: _stopSpinning,
-              child: Text('종료'),
+              child: const Text('종료'),
             ),
           ],
         ),
