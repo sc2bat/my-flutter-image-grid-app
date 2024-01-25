@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/grid_type_image_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_id_text_widget.dart';
 
 class GridSecondRowWidget extends StatelessWidget {
   const GridSecondRowWidget({
@@ -35,12 +36,7 @@ class GridSecondRowWidget extends StatelessWidget {
               SizedBox(
                 width: 32.0,
               ),
-              Text(
-                '0001',
-                style: TextStyle(
-                  fontSize: 16.0,
-                ),
-              ),
+              PokemonIdTextWidget(),
             ],
           ),
         ),

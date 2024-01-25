@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/grid_type_image_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_id_text_widget.dart';
 
 class GirdThirdRowWidget extends StatelessWidget {
   const GirdThirdRowWidget({
@@ -16,16 +17,11 @@ class GirdThirdRowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         const Padding(
-          padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-          child: Text(
-            '0001',
-            style: TextStyle(
-              fontSize: 14.0,
-            ),
-          ),
+          padding: EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
+          child: PokemonIdTextWidget(),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -45,47 +41,6 @@ class GirdThirdRowWidget extends StatelessWidget {
                     typeimageSize: typeimageSize,
                     iconSize: iconSize,
                   ),
-                  // isCollected
-                  //     ? Image.network(
-                  //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                  //         width: 24.0,
-                  //         height: 24.0,
-                  //       )
-                  //     : Container(
-                  //         decoration: BoxDecoration(
-                  //             shape: BoxShape.circle,
-                  //             border: Border.all(
-                  //               color: Colors.black45,
-                  //               width: 2.0,
-                  //             )),
-                  //         child: const Icon(
-                  //           Icons.question_mark_rounded,
-                  //           color: Colors.black45,
-                  //           size: 20.0,
-                  //         ),
-                  //       ),
-                  // const SizedBox(
-                  //   height: 2.0,
-                  // ),
-                  // isCollected
-                  //     ? Image.network(
-                  //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                  //         width: 24.0,
-                  //         height: 24.0,
-                  //       )
-                  //     : Container(
-                  //         decoration: BoxDecoration(
-                  //             shape: BoxShape.circle,
-                  //             border: Border.all(
-                  //               color: Colors.black45,
-                  //               width: 2.0,
-                  //             )),
-                  //         child: const Icon(
-                  //           Icons.question_mark_rounded,
-                  //           color: Colors.black45,
-                  //           size: 20.0,
-                  //         ),
-                  //       ),
                 ],
               ),
               Image.network(
