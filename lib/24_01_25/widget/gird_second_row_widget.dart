@@ -10,8 +10,10 @@ class GridSecondRowWidget extends StatelessWidget {
 
   final bool isCollected;
   final String typeImageUrl;
-  final double typeimageSize = 24.0;
-  final double iconSize = 20.0;
+  final double typeimageSize = 32.0;
+  final double iconSize = 24.0;
+
+  final double pokemonImageSize = 152.0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +22,26 @@ class GridSecondRowWidget extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-          child: Text(
-            '0001',
-            style: TextStyle(
-              fontSize: 14.0,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                '이상해씨',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                width: 32.0,
+              ),
+              Text(
+                '0001',
+                style: TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+            ],
           ),
         ),
         Padding(
@@ -49,8 +66,8 @@ class GridSecondRowWidget extends StatelessWidget {
               ),
               Image.network(
                 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                width: 90.0,
-                height: 90.0,
+                width: pokemonImageSize,
+                height: pokemonImageSize,
                 color: isCollected ? null : Colors.black45,
               ),
             ],

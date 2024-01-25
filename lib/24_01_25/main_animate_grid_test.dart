@@ -13,10 +13,10 @@ class ZoomableGridView extends StatefulWidget {
 class _ZoomableGridViewState extends State<ZoomableGridView> {
   @override
   Widget build(BuildContext context) {
-    bool isCollected = true;
+    bool isCollected = false;
     print('bool Collected => $isCollected');
 
-    int crossAxisCount = 3;
+    int crossAxisCount = 2;
 
     String typeImageUrl =
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png';
