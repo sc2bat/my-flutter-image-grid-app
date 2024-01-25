@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_image_widget.dart';
 
 import 'pokemon_id_text_widget.dart';
 
@@ -19,11 +20,9 @@ class GridFourthRowWidget extends StatelessWidget {
         Expanded(
           child: Stack(
             children: [
-              Image.network(
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                width: pokemonImageSize,
-                height: pokemonImageSize,
-                color: isCollected ? null : Colors.black45,
+              PokemonImageWidget(
+                isCollected: isCollected,
+                pokemonImageSize: pokemonImageSize,
               ),
               const Positioned(
                 top: 4.0,

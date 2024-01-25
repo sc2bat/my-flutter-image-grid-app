@@ -15,6 +15,8 @@ import 'package:my_flutter_image_grid_app/24_01_22/main_grid_view_test.dart';
 // import 'package:my_flutter_image_grid_app/24_01_20_firebase/main_firebase.dart';
 import 'package:my_flutter_image_grid_app/24_01_22/main_grid_view_test_backup.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/main_animate_grid_test.dart';
+import 'package:my_flutter_image_grid_app/24_01_25_ZoomPageTransitionsBuilder/main_zoom_page_transitions_builder_test.dart';
+import 'package:my_flutter_image_grid_app/24_01_25_pinch_zoom/main_pinch_zoom_test.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -90,6 +92,18 @@ final router = GoRouter(
         return const ZoomableGridView();
       },
     ),
+    GoRoute(
+      path: '/24_01_25_pinchzoomtest',
+      builder: (context, state) {
+        return const MainPinchZoomTest();
+      },
+    ),
+    GoRoute(
+      path: '/24_01_25_ZoomPageTransitionsBuilder',
+      builder: (context, state) {
+        return const MainZoomPageTransitionsBuilderTest();
+      },
+    ),
   ],
 );
 
@@ -101,8 +115,11 @@ class Routes {
     RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
     RouteModel(title: '240118_MainRouletteScreen', developTime: 'none'),
     RouteModel(title: '24_01_22_gridviewtest_backup', developTime: 'none'),
-    RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
+    // RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_25_gridviewtest', developTime: 'none'),
+    // RouteModel(title: '24_01_25_pinchzoomtest', developTime: 'none'),
+    // RouteModel(
+    //     title: '24_01_25_ZoomPageTransitionsBuilder', developTime: 'none'),
     // RouteModel(title: '240105', developTime: 'none'),
     // RouteModel(title: '240106', developTime: 'none'),
     // RouteModel(title: '240107', developTime: 'none'),

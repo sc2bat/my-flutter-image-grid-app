@@ -53,7 +53,7 @@ class _ZoomableGridViewState extends State<ZoomableGridView> {
 
   @override
   Widget build(BuildContext context) {
-    crossAxisCount = 5;
+    crossAxisCount = 2;
 
     bool isCollected = true;
 

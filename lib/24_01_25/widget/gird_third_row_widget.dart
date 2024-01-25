@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/grid_type_image_widget.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_id_text_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_image_widget.dart';
 
 class GirdThirdRowWidget extends StatelessWidget {
   const GirdThirdRowWidget({
@@ -13,6 +14,8 @@ class GirdThirdRowWidget extends StatelessWidget {
   final String typeImageUrl;
   final double typeimageSize = 24.0;
   final double iconSize = 20.0;
+
+  final double pokemonImageSize = 90.0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +46,9 @@ class GirdThirdRowWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Image.network(
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                width: 90.0,
-                height: 90.0,
-                color: isCollected ? null : Colors.black45,
+              PokemonImageWidget(
+                isCollected: isCollected,
+                pokemonImageSize: pokemonImageSize,
               ),
             ],
           ),

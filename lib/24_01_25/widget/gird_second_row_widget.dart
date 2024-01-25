@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/grid_type_image_widget.dart';
 import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_id_text_widget.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/pokemon_image_widget.dart';
 
 class GridSecondRowWidget extends StatelessWidget {
   const GridSecondRowWidget({
@@ -60,11 +61,9 @@ class GridSecondRowWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Image.network(
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-                width: pokemonImageSize,
-                height: pokemonImageSize,
-                color: isCollected ? null : Colors.black45,
+              PokemonImageWidget(
+                isCollected: isCollected,
+                pokemonImageSize: pokemonImageSize,
               ),
             ],
           ),

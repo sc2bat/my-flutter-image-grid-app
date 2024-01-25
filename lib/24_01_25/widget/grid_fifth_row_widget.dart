@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'pokemon_image_widget.dart';
+
 class GridFifthRowWidget extends StatelessWidget {
   const GridFifthRowWidget({
     super.key,
@@ -12,17 +14,9 @@ class GridFifthRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.network(
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-          width: pokemonImageSize,
-          height: pokemonImageSize,
-          color: isCollected ? null : Colors.black45,
-        ),
-      ],
+    return PokemonImageWidget(
+      isCollected: isCollected,
+      pokemonImageSize: pokemonImageSize,
     );
   }
 }
