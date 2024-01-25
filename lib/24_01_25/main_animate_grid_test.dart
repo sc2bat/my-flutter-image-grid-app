@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_image_grid_app/24_01_25/widget/gird_second_row_widget.dart';
 
 import 'widget/gird_third_row_widget.dart';
 
@@ -15,10 +16,10 @@ class _ZoomableGridViewState extends State<ZoomableGridView> {
     bool isCollected = true;
     print('bool Collected => $isCollected');
 
+    int crossAxisCount = 3;
+
     String typeImageUrl =
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png';
-    double typeimageSize = 24.0;
-    double iconSize = 20.0;
 
     return Scaffold(
       appBar: AppBar(
@@ -31,8 +32,8 @@ class _ZoomableGridViewState extends State<ZoomableGridView> {
         child: Center(
           child: GridView.builder(
             physics: null,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
               crossAxisSpacing: 4.0,
               mainAxisSpacing: 4.0,
             ),
@@ -43,11 +44,26 @@ class _ZoomableGridViewState extends State<ZoomableGridView> {
                   borderRadius: BorderRadius.circular(10.0),
                   color: Colors.black.withOpacity(0.3),
                 ),
-                child: GirdThirdRowWidget(
-                    isCollected: isCollected,
-                    typeImageUrl: typeImageUrl,
-                    typeimageSize: typeimageSize,
-                    iconSize: iconSize),
+                child: crossAxisCount == 2
+                    ? GridSecondRowWidget(
+                        isCollected: isCollected,
+                        typeImageUrl: typeImageUrl,
+                      )
+                    : crossAxisCount == 3
+                        ? GirdThirdRowWidget(
+                            isCollected: isCollected,
+                            typeImageUrl: typeImageUrl,
+                          )
+                        : null,
+                // crossAxisCount == 4 ?
+                // GirdFourthRowWidget(
+                //   isCollected: isCollected,
+                //   typeImageUrl: typeImageUrl,
+                // ) :
+                // GirdFifthRowWidget(
+                //   isCollected: isCollected,
+                //   typeImageUrl: typeImageUrl,
+                // ),
               );
             },
           ),

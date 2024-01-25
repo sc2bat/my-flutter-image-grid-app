@@ -6,14 +6,12 @@ class GridSecondRowWidget extends StatelessWidget {
     super.key,
     required this.isCollected,
     required this.typeImageUrl,
-    required this.typeimageSize,
-    required this.iconSize,
   });
 
   final bool isCollected;
   final String typeImageUrl;
-  final double typeimageSize;
-  final double iconSize;
+  final double typeimageSize = 24.0;
+  final double iconSize = 20.0;
 
   @override
   Widget build(BuildContext context) {
