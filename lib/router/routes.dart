@@ -17,6 +17,7 @@ import 'package:my_flutter_image_grid_app/24_01_22/main_grid_view_test_backup.da
 import 'package:my_flutter_image_grid_app/24_01_25/main_animate_grid_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_25_ZoomPageTransitionsBuilder/main_zoom_page_transitions_builder_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_25_pinch_zoom/main_pinch_zoom_test.dart';
+import 'package:my_flutter_image_grid_app/24_01_29_superteam/main_super_team.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -104,6 +105,12 @@ final router = GoRouter(
         return const MainZoomPageTransitionsBuilderTest();
       },
     ),
+    GoRoute(
+      path: '/24_01_29_superteam',
+      builder: (context, state) {
+        return const MainSuperTeam();
+      },
+    ),
   ],
 );
 
@@ -117,6 +124,7 @@ class Routes {
     RouteModel(title: '24_01_22_gridviewtest_backup', developTime: 'none'),
     // RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_25_gridviewtest', developTime: 'none'),
+    RouteModel(title: '24_01_29_superteam', developTime: 'none'),
     // RouteModel(title: '24_01_25_pinchzoomtest', developTime: 'none'),
     // RouteModel(
     //     title: '24_01_25_ZoomPageTransitionsBuilder', developTime: 'none'),
