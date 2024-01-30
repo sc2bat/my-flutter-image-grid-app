@@ -18,6 +18,7 @@ import 'package:my_flutter_image_grid_app/24_01_25/main_animate_grid_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_25_ZoomPageTransitionsBuilder/main_zoom_page_transitions_builder_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_25_pinch_zoom/main_pinch_zoom_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_29_superteam/main_super_team.dart';
+import 'package:my_flutter_image_grid_app/24_01_30_grid_scroller/main_grid_scroller.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -111,6 +112,12 @@ final router = GoRouter(
         return const MainSuperTeam();
       },
     ),
+    GoRoute(
+      path: '/24_01_30_gridscroller',
+      builder: (context, state) {
+        return const MainGridScroller();
+      },
+    ),
   ],
 );
 
@@ -125,6 +132,7 @@ class Routes {
     // RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_25_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_29_superteam', developTime: 'none'),
+    RouteModel(title: '24_01_30_gridscroller', developTime: 'none'),
     // RouteModel(title: '24_01_25_pinchzoomtest', developTime: 'none'),
     // RouteModel(
     //     title: '24_01_25_ZoomPageTransitionsBuilder', developTime: 'none'),
