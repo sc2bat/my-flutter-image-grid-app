@@ -118,21 +118,28 @@ final router = GoRouter(
         return const MainGridScroller();
       },
     ),
+    GoRoute(
+      path: '/24_01_31_option_testing',
+      builder: (context, state) {
+        return const MainGridScroller();
+      },
+    ),
   ],
 );
 
 class Routes {
   final List<RouteModel> routeList = [
-    RouteModel(title: '231227', developTime: 'none'),
-    RouteModel(title: '240102', developTime: '1h40m54s8'),
-    RouteModel(title: '240102_provider', developTime: 'provider_testing'),
-    RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
-    RouteModel(title: '240118_MainRouletteScreen', developTime: 'none'),
-    RouteModel(title: '24_01_22_gridviewtest_backup', developTime: 'none'),
+    // RouteModel(title: '231227', developTime: 'none'),
+    // RouteModel(title: '240102', developTime: '1h40m54s8'),
+    // RouteModel(title: '240102_provider', developTime: 'provider_testing'),
+    // RouteModel(title: '240105_ChangeNotifierProvider', developTime: 'none'),
+    // RouteModel(title: '240118_MainRouletteScreen', developTime: 'none'),
+    // RouteModel(title: '24_01_22_gridviewtest_backup', developTime: 'none'),
     // RouteModel(title: '24_01_22_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_25_gridviewtest', developTime: 'none'),
     RouteModel(title: '24_01_29_superteam', developTime: 'none'),
     RouteModel(title: '24_01_30_gridscroller', developTime: 'none'),
+    RouteModel(title: '24_01_31_option_testing', developTime: 'none'),
     // RouteModel(title: '24_01_25_pinchzoomtest', developTime: 'none'),
     // RouteModel(
     //     title: '24_01_25_ZoomPageTransitionsBuilder', developTime: 'none'),
