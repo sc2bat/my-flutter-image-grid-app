@@ -19,6 +19,7 @@ import 'package:my_flutter_image_grid_app/24_01_25_ZoomPageTransitionsBuilder/ma
 import 'package:my_flutter_image_grid_app/24_01_25_pinch_zoom/main_pinch_zoom_test.dart';
 import 'package:my_flutter_image_grid_app/24_01_29_superteam/main_super_team.dart';
 import 'package:my_flutter_image_grid_app/24_01_30_grid_scroller/main_grid_scroller.dart';
+import 'package:my_flutter_image_grid_app/24_01_31/option_test_001.dart';
 import 'package:my_flutter_image_grid_app/router/route_page.dart';
 
 final router = GoRouter(
@@ -121,7 +122,7 @@ final router = GoRouter(
     GoRoute(
       path: '/24_01_31_option_testing',
       builder: (context, state) {
-        return const MainGridScroller();
+        return const OptionTest001();
       },
     ),
   ],
