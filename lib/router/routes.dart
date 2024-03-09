@@ -125,6 +125,12 @@ final router = GoRouter(
         return const OptionTest001();
       },
     ),
+    GoRoute(
+      path: '/24_03_10_googlemaps',
+      builder: (context, state) {
+        return const OptionTest001();
+      },
+    ),
   ],
 );
 
@@ -141,6 +147,7 @@ class Routes {
     RouteModel(title: '24_01_29_superteam', developTime: 'none'),
     RouteModel(title: '24_01_30_gridscroller', developTime: 'none'),
     RouteModel(title: '24_01_31_option_testing', developTime: 'none'),
+    RouteModel(title: '24_03_10_googlemaps', developTime: 'none'),
     // RouteModel(title: '24_01_25_pinchzoomtest', developTime: 'none'),
     // RouteModel(
     //     title: '24_01_25_ZoomPageTransitionsBuilder', developTime: 'none'),
