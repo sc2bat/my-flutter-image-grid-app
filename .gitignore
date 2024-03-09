@@ -87,3 +87,7 @@ ios/Flutter/flutter_export_environment.sh
 ios/Flutter/flutter_export_environment_ios.sh
 ios/Pods/
 ios/Podfile.lock
+
+
+/assets/*
+android/app/src/main/AndroidManifest.xml
